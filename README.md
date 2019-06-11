@@ -4,6 +4,8 @@ Deployment script for Ruby on Rails on a Debian/Ubuntu VM
 ## Getting Started
 
 Setup your machine with either Debian or Ubuntu locally or on Google Cloud. Ensure port 22 and 443 is open.<br>
+Optionally, you can choose to enable SSL setup. SSL certificates are provided by CertBot :<br>
+[Certbot website](https://certbot.eff.org/about/)<br>
 !! Please use sudo as we want to serve on startup. Will create a workaround for that.
 
 ### Deployment structure
@@ -11,6 +13,10 @@ Setup your machine with either Debian or Ubuntu locally or on Google Cloud. Ensu
 Hosting directory :
 ```
 /srv/www
+```
+SSL cert directory :
+```
+/etc/letsencrypt/live/[DOMAIN_NAME]
 ```
 
 Server start on boot :
@@ -39,6 +45,15 @@ sudo bundle install
 ```
 sudo reboot
 ```
+
+## SSL certificate configuration
+1. Before continuing your SSL Cert setup, please ensure your DNS is pointing to your IP for CertBot verification.<br>
+2. Enter y to install a SSL cert.
+3. After the installation of SSL cert is complete, run the command below and change **[DOMAIN_NAME]** to your domain name.
+```
+sudo crontab -e
+```
+
 
 ## Expected error/s
 
