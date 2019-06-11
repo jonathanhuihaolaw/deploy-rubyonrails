@@ -20,6 +20,6 @@ echo "This process will take longer than usual"
 sudo gem install rails -v 4.2.1
 echo "Now, let rails serve public traffic on reboot"
 echo "Setting to start HTTP server at /srv/www/*"
-sudo echo "@reboot /bin/bash -l -c 'cd /srv/www && sudo rails s -p 80 --binding='0.0.0.0/0'" >> startcron
+sudo echo "@reboot /bin/bash -l -c 'cd /srv/www && sudo rails s -p 80 -b 0.0.0.0/0'" >> startcron
 sudo crontab startcron
 sudo rm startcron
