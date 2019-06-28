@@ -30,7 +30,7 @@ sudo crontab -l
 1. Fire up terminal / SSH console and run
 
 ```
-wget https://raw.githubusercontent.com/jonathanhuihaolaw/deploy-rubyonrails/master/deploy-rails.sh & sudo bash ./deploy-rails.sh
+wget https://raw.githubusercontent.com/jonathanhuihaolaw/deploy-rubyonrails/master/deploy-rails.sh && sudo bash ./deploy-rails.sh
 ```
 
 2. Extract your hosting content into /srv/www/*
